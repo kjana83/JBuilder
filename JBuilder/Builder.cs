@@ -30,5 +30,13 @@ namespace JBuilder
                 });
             return TObject;
         }
+
+        public static IEnumerable<type> BuildArray<type>(int size)
+        {            
+            for (int count=0; count < size; count++)
+            {
+                yield return BuildSingle(typeof(type));
+            }
+        }
     }
 }
